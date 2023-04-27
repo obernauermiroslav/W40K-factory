@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: arial;
+      }
+      #marineGame{
+        position: absolute;
+        margin-top: 170px;
+        margin-left: 100px;
+        padding: 10px;
+        padding-left: 40px;
+        border-radius: 40px;
+        width: 200px;
+        border: 5px solid red;
+      }
+      #orcGame{
+        position: absolute;
+        margin-top: 220px;
+        margin-left: 700px;
+        padding-left: 55px;
+        border-radius: 40px;
+        width: 200px;
+        border: 5px solid rgb(13, 87, 29);
+      }
+      #marineshoot{
+        position: absolute;
+        width: 145px;
+        height: 145px;
+        margin-top: 235px;
+        margin-left: 400px;
+      }
+      #orcshoot{
+        position: absolute;
+        width: 135px;
+        height: 135px;
+        margin-top: 240px;
+        margin-left:550px;
+      }
+      #gameRules{
+        position: absolute;
+        padding: 5px;
+        border: 5px solid black;
+      }
+      #start-button{
+        position: absolute;
+        margin-top: 175px;
+        margin-left: 435px;
+      }
+      #goBackGame{
+        position: absolute;
+        margin-top: 175px;
+        margin-left: 515px;
+
+      }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Warhammer battle</title>
+  </head>
+  <body>
+
+    <button id="start-button">Start Game</button>
+    <button id="goBackGame">Go back to main page</button>
+
+    <div id="marineGame">
+    <h1>Space Marines 🪖</h1>
+      <dl class="stats">
+      <dt>Soldiers</dt>
+      <dd class="candies">0</dd>
+      <dt>Officers</dt>
+      <dd class="lollypops"></dd>
+      <dt>Soldiers / Second</dt>
+      <dd class="speed">0</dd>
+    </dl>
+    <button class="create-candies">Create soldiers</button>
+    <button class="buy-lollypops">hire Officer</button>
+    <button class="candy-machine" disabled="true">For the emperor!!!</button>
+  </div>
+  <img id="marineshoot" src="img/marine.gif" >
+
+  <div id="orcGame">
+    <h1>Orcs 👹</h1>
+      <dl class="statsOrc">
+      <dt>Grunts</dt>
+      <dd class="Grunts">1</dd>
+      <dt>Grunts / Second</dt>
+      <dd class="speedOrc">0</dd>
+    </dl>
+  </div>
+  <img id="orcshoot" src="img/orcshoot.gif" >
+
+<div id="gameRules">
+<p>Rules of the game:
+<br>It is simple, you have to beat the orcs, the task is to collect 1000+ soldiers faster that orcs can gather 1000+ grunts. 
+You have to click the button:"create soldiers", each click will  <br> create 10 soldiers, if you get 50, you can hire an officer(click the button:"hire officer"),
+ he will provide you with more soldiers(increases the speed by 10/s).
+<br>You can also cheat, by clicking the button:"For the emperor"(it will be unlocked after reaching certain number of soldiers,
+and it will dramatically increase the speed).
+<br>
+<br>Have fun.
+</p>
+</div>
+
+<script src="../game.js" type="text/javascript"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src *; child-src *; script-src *;" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Reddit</title>
+  </head>
+  <body>
+    <div class="header"></div>
+    <img draggable="false" id="seal1" src="img/seal.jpg">
+    <img draggable="false" id="seal2" src="img/seal.jpg">
+    <div class="postSection">
+      <div id="postsAll" class="allPosts">
+      </div>
+      <div class="sidebar">
+        <button id="submit-new-post" class="create" disabled>Submit new post</button>
+        <div class="about">
+          <p>W40K Collegia Titanica </p>
+          
+          <ul>
+            <li>Warhound</li>
+            <li>Reaver</li>
+            <li>Warbringer</li>
+            <li>Warlord</li>
+            <li>Emperor</li>
+          </ul>
+          <div class="logoWrapper">
+          <img ondragstart="drag_start(event)"  draggable="true" id="logo" src="img/logo.jpg">
+          <span id="tootltipText">"In the name of the emperor, catch that orc "</span>
+        </div>
+        </div>
+        <img draggable="false"  id="knight" src="img/adeptus.gif">
+          <button id="help">Help</button>
+          <div draggable="false" id="droptarget"></div>
+          <img id="orc"  draggable="false" src="img/orc.gif">
+      </div>
+    </div>
+    <button id="playGameButton">Play Game</button>
+
+
+    <script src="../script.js"></script>
+  </body>
+</html>

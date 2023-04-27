@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/submit.css" />
+    <script src="../script.js"></script>
+   
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Reddit</title>
+  </head>
+  <body>
+   
+    <div class="header"></div>
+    <img id="seal1" src="img/seal.jpg">
+    <img id="seal2" src="img/seal.jpg">
+    <body>
+        <div class="container">
+          
+          <form action="/api/posts/submit" method="POST">
+            <legend for="title">TITAN CLASS</legend>
+            <input type="text" id="Title" name="Title" required />
+            <br>
+            <legend for="url">URL</legend>
+            <input type="text" id="URL" name="URL" required />
+    <br>
+            <button id="submitButt" type="submit">Submit</button>
+          </form>
+        
+          <img id="knight" src="img/titan.gif">
+          <img id="titans" src="img/t3.gif" >
+          <br>
+          <button onclick="changeGif()">Change battle scene</button>
+        </div>
+
+         
+        
+    
+  </body>
+</html>
