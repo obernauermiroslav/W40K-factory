@@ -20,7 +20,7 @@ submit.addEventListener("click", function () {
 
 if(goBack !== null) {
   goBack.addEventListener("click", function () {
-    window.location.href = "http://localhost:3000/";
+    window.location.href = "http://localhost:3000/main";
   })};
 
  

@@ -83,5 +83,5 @@ startButton.disabled = true;
 
 if(goBackGame !== null) {
   goBackGame.addEventListener("click", function () {
-    window.location.href = "http://localhost:3000/";
+    window.location.href = "http://localhost:3000/main";
   })};
