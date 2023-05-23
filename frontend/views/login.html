@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="signUpForm">
+        <h2>The emperor need you!</h2>
+        <form  id="main-form">
+          <label for="name"></label>
+          <input
+            type="text"
+            name="username"
+            id="name"
+            placeholder="Username"
+            required
+          />
+          <br>
+          <br>
+          <label for="email"></label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="E-mail"
+            required
+          />
+          <br>
+          <br>
+          <label for="password"></label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <br>
+          <br>
+          <label for="passwordConfirmation"></label>
+          <input
+            type="password"
+            name="passwordConfirmation"
+            id="passwordConfirmation"
+            placeholder="Retype password"
+            required
+          />
+          <br />
+          <button type="submit" id="signup">SIGN ME UP</button>
+        </form>
+      </div>
+
+      <p id="or">OR</p>
+
+      <div class="socialLogIn">
+        <button class="facebook">Log in with Facebook</button>
+        
+        <button class="twitter">Log in with Twitter</button>
+       
+        <button class="google">Log in with Google</button>
+      </div>
+    </div>
+    <script src="scriptLogin.js"></script>
+  </body>
+</html>

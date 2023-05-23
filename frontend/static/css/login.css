@@ -1,0 +1,121 @@
+body {
+    background-color: rgb(76, 167, 170);
+  }
+  h2 {
+    margin-left: -40px;
+    margin-top: -15px;
+  }
+  
+  .container {
+    background-color: white;
+    position: relative;
+    width: 550px;
+    height: 370px;
+    padding-left: 15px;
+    padding-top: 10px;
+    margin-left: 230px;
+    margin-top: 50px;
+    box-shadow: 20px 20px 40px #cbcdce;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  form {
+    margin-top: 20px;
+    margin-left: -40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -20px;
+    gap: 8px;
+  }
+  .socialLogIn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25px;
+    margin-top: 10px;
+    gap: 10px;
+  }
+  input {
+    background-color: white;
+    border: 0;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    width: 200px;
+  }
+  #or {
+    display: inline-block;
+    text-align: center;
+    background-color: #ddd;
+    width: 2.4em;
+    height: 2.4em;
+    line-height: 2.4em;
+    border-radius: 50%;
+    margin-left: 25px;
+    margin-top: 25px;
+  }
+  #signup {
+    margin-left: -95px;
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 32px;
+    width: 110px;
+    background-color: rgb(89, 196, 146);
+    border: 0;
+    color: white;
+    box-shadow: 0 4px rgb(104, 101, 101);
+  }
+  #signup:active{
+  box-shadow: 0 0;
+  transform: translateY(4px);
+  }
+  
+  .facebook {
+    background-color: rgb(64, 64, 231);
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    height: 35px;
+    width: 170px;
+    box-shadow: 0 4px rgb(104, 101, 101);
+  }
+  .facebook:active{
+    box-shadow: 0 0;
+    transform: translateY(4px);
+    }
+  .twitter {
+    background-color: rgb(133, 178, 206);
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    height: 35px;
+    width: 170px;
+    box-shadow: 0 4px rgb(104, 101, 101);
+  }
+  .twitter:active{
+    box-shadow: 0 0;
+    transform: translateY(4px);
+    }
+  .google {
+    background-color: rgba(214, 51, 40, 0.856);
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    height: 35px;
+    width: 170px;
+    box-shadow: 0 4px rgb(104, 101, 101);
+  }
+  .google:active{
+    box-shadow: 0 0;
+    transform: translateY(4px);
+    }
+  #mainForm{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  

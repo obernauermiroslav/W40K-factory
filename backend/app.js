@@ -3,18 +3,18 @@ const path = require("path");
 const PORT = 3000;
 const app = express();
 const mysql = require("mysql2");
+const bcrypt = require('bcrypt');
 app.use("/frontend/css", express.static("css"));
 const bodyParser = require("body-parser");
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.set("view engine", "ejs");
 
-app.use(
-  express.static(path.resolve(path.join(__dirname, "/../frontend/static")))
-);
-
+app.use(express.static(path.resolve(path.join(__dirname, "/../frontend/static"))));
 app.use(express.static(__dirname + '/views', { type: 'text/javascript' }));
 
 
-app.use(express.json());
+
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -22,27 +22,97 @@ const connection = mysql.createConnection({
   database: "redditFrontend",
 });
 
+// Create the posts table
 connection.query(
-  `CREATE TABLE IF NOT EXISTS posts 
-    (id INT AUTO_INCREMENT primary key NOT NULL, 
-    title VARCHAR(300) NOT NULL, 
-    url VARCHAR(300) NOT NULL, 
-    timestamp TIMESTAMP NOT NULL DEFAULT NOW(), 
-   vote INT DEFAULT 0 );`,
+  `CREATE TABLE IF NOT EXISTS posts (
+    id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    title VARCHAR(300) NOT NULL,
+    url VARCHAR(300) NOT NULL,
+    timestamp TIMESTAMP NOT NULL DEFAULT NOW(),
+    vote INT DEFAULT 0
+  );`,
   (error) => {
     if (error) {
       console.error(error);
       return;
     }
-    console.log("posts table created if did not exist");
+    console.log("Posts table created if it did not exist");
+
+    // Create the users table
+    connection.query(
+      `CREATE TABLE IF NOT EXISTS users (
+        id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+        username VARCHAR(200) NOT NULL,
+        password VARCHAR(200) NOT NULL,
+        email VARCHAR(200) NOT NULL,
+        timestamp TIMESTAMP NOT NULL DEFAULT NOW()
+      );`,
+      (error) => {
+        if (error) {
+          console.error(error);
+          return;
+        }
+        console.log("Users table created if it did not exist");
+      }
+    );
   }
 );
 
 app.get("/", (req, res) => {
   res.sendFile(
-    path.resolve(path.join(__dirname, "/../frontend/views/index.html"))
+    path.resolve(path.join(__dirname, "../frontend/views/login.html"))
   );
 });
+
+app.get("/main", (req, res) => {
+  res.sendFile(
+    path.resolve(path.join(__dirname, "../frontend/views/index.html"))
+  );
+});
+
+app.post('/signup', (req, res) => {
+  const { username, email, password } = req.body;
+
+  // Check if the username or email already exist in the database
+  connection.query(
+    'SELECT * FROM users WHERE username = ? OR email = ?',
+    [username, email],
+    (err, results) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).json({ error: 'Error checking data in database' });
+      }
+      if (results.length > 0) {
+        return res.status(400).json({ error: 'Username or email already exists' });
+      }
+
+      // Hash the password
+      bcrypt.hash(password, 10, (err, hash) => {
+        if (err) {
+          console.error(err);
+          return res.status(500).json({ error: 'Error saving data to database' });
+        }
+
+        const tzoffset = new Date().getTimezoneOffset() * 60000;
+        const timestamp = req.body.timestamp ?? new Date(Date.now() - tzoffset).toISOString().slice(0, -1);
+
+        // Store the hashed password in the database
+        connection.query(
+          'INSERT INTO users (username, email, password, timestamp) VALUES (?, ?, ?, ?)',
+          [username, email, hash, timestamp],
+          (err) => {
+            if (err) {
+              console.error(err);
+              return res.status(500).json({ error: 'Error saving data to database' });
+            }
+            res.redirect('/');
+          }
+        );
+      });
+    }
+  );
+});
+
 
 app.post("/api/posts/submit", (req, res) => {
   
