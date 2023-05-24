@@ -1,5 +1,5 @@
-body {
-    background-color: rgb(76, 167, 170);
+body { 
+    background-image: url("../img/loginlogo.jpg");
   }
   h2 {
     margin-left: -40px;
@@ -7,19 +7,16 @@ body {
   }
   
   .container {
-    background-color: white;
     position: relative;
     width: 550px;
     height: 370px;
     padding-left: 15px;
     padding-top: 10px;
-    margin-left: 230px;
-    margin-top: 50px;
-    box-shadow: 20px 20px 40px #cbcdce;
+    margin-left: 365px;
+    margin-top: 140px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
   }
   
   form {
@@ -41,11 +38,14 @@ body {
     margin-top: 10px;
     gap: 10px;
   }
+
   input {
     background-color: white;
     border: 0;
     border-bottom: 1px solid rgb(100, 100, 100);
-    width: 200px;
+    width: 170px;
+    height: 25px;
+    color: black;
   }
   #or {
     display: inline-block;
@@ -59,14 +59,14 @@ body {
     margin-top: 25px;
   }
   #signup {
-    margin-left: -95px;
+    margin-left: -65px;
     border-radius: 5px;
     margin-top: 10px;
     height: 32px;
     width: 110px;
     background-color: rgb(89, 196, 146);
     border: 0;
-    color: white;
+    color: black;
     box-shadow: 0 4px rgb(104, 101, 101);
   }
   #signup:active{

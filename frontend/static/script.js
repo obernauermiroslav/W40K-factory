@@ -166,7 +166,6 @@ fetch("http://localhost:3000/api/posts/get")
     for (let i = 0; i < value.length; i++) {
       createPost(value[i]);
     }
-    //console.log(value);
   });
 
 function deletePost(id) {

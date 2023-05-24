@@ -74,7 +74,7 @@ candyRain.addEventListener("click", function () {
     counter = counter += 123;
   }, 1000);
   generation.innerText = speed += 123;
-  alert(`Hey, that's cheating...you are supposed to get 1000 soldiers 
+  alert(`Hey, that's cheating...you are supposed to get 1500 soldiers 
   'the hard way'(you have to use the 'create soldiers' and 'hire officer' buttons only), 
   so be so kind and stop using this button ok? `)
 });

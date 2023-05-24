@@ -13,16 +13,12 @@ app.set("view engine", "ejs");
 app.use(express.static(path.resolve(path.join(__dirname, "/../frontend/static"))));
 app.use(express.static(__dirname + '/views', { type: 'text/javascript' }));
 
-
-
-
 const connection = mysql.createConnection({
   host: "localhost",
   user: "gfa",
   database: "redditFrontend",
 });
 
-// Create the posts table
 connection.query(
   `CREATE TABLE IF NOT EXISTS posts (
     id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -38,7 +34,6 @@ connection.query(
     }
     console.log("Posts table created if it did not exist");
 
-    // Create the users table
     connection.query(
       `CREATE TABLE IF NOT EXISTS users (
         id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -228,7 +223,6 @@ app.put("/api/posts/:id/downvote", (req, res) => {
       if (err) {
         res.status(400).send();
       }
-
       return res.status(200).json({ posts });
     }
   );
@@ -246,7 +240,6 @@ app.put("/api/posts/:id", (req, res) => {
     `UPDATE redditfrontend.posts SET title = ?, url = ? WHERE id = ?`,
     [title, url, id],
     (err, posts) => {
-      //console.log(posts);
       if (err) {
         return res.status(400).send();
       } else {
