@@ -130,7 +130,7 @@ app.post("/api/posts/submit", (req, res) => {
         console.log(err);
         return res.status(500).json(err);
       }
-      res.redirect("/");
+      res.redirect("/main");
     }
   );
 });
@@ -161,6 +161,17 @@ app.get("/api/posts/get", (req, res) => {
     }
    // console.log(posts);
     return res.status(200).send(posts);
+  });
+});
+
+app.get("/api/posts/getUser", (req, res) => {
+  connection.query("SELECT username FROM redditfrontend.users ORDER BY id DESC LIMIT 1;", (err, users) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json(err);
+    }
+   // console.log(posts);
+    return res.status(200).send(users);
   });
 });
 

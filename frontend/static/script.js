@@ -8,10 +8,9 @@ let logo = document.getElementById("logo");
 let orc = document.getElementById("orc");
 let tooltip = document.getElementById("tootltipText");
 let goBack = document.getElementById("goBack");
+let showUserText = document.getElementById("showUsertext2")
 
 const playGameButton = document.getElementById("playGameButton");
-
-
 
 if(submit !== null) {
 submit.addEventListener("click", function () {
@@ -314,19 +313,8 @@ function changeGif() {
   } else {
     newGif = "t1.gif";
   }
-
   gif.src = "img/" + newGif;
 }
-
-/*
-window.addEventListener("load", function () {
-  setTimeout(function () {
-    let titan = document.getElementById("titanchange");
-    if(titan !== null) {
-    titan.style.visibility = "visible";}
-  }, 2000);
-});
-*/
 
 window.addEventListener("load", function () {
   setTimeout(function () {
@@ -348,6 +336,29 @@ agree.addEventListener("change", function() {
     continueBtn.style.display = "none";
   }
 })};
+
+function fetchLatestUser() {
+  fetch("/api/posts/getUser")
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.length === 0) {
+        showUserText.textContent = "No users found.";
+      } else {
+        const latestUser = data[0].username;
+        showUserText.textContent = latestUser;
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      showUserText.textContent = "Error retrieving user.";
+    });
+}
+
+fetchLatestUser(); // Call the function when the page loads
+
+
+
+
 
 
 

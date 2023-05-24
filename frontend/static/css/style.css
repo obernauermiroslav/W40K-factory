@@ -1,5 +1,4 @@
 body {
- 
   padding: 0;
   margin: 0;
   margin-left: 1px;
@@ -55,7 +54,6 @@ li {
   margin-left: 450px;
   z-index: 2;
   transition: all 0.2s cubic-bezier(1, 1, 1, 1);
-
 }
 
 #logo:hover {
@@ -161,8 +159,6 @@ li {
   transform: translateY(4px);
 }
 
-
-
 #droptarget {
   position: absolute;
   margin-left: 175px;
@@ -201,5 +197,17 @@ li {
   position: absolute;
   margin-top: -380px;
   margin-left: 40px;
+}
+
+#showUsertext{
+  position: absolute;
+  left: 88%;
+  top: 33%;
+  width: 100px;
+  padding: 5px;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
