@@ -291,11 +291,13 @@ function changeTextColor() {
   var firstText = document.getElementById("firstText");
   var list = document.getElementById("list");
   let button = document.getElementById("colorChange");
+  var checkboxLabel = document.getElementById("checkboxLabel");
   header.style.color = "black";
   header2.style.color = "green";
   list.style.color = "red";
   firstText.style.color = "transparent";
   button.disabled = true;
+  checkboxLabel.style.display = "block";
 }
 
 function changeGif() {
