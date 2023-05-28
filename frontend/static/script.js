@@ -23,7 +23,6 @@ if(goBack !== null) {
   })};
 
  
-
 if(destroy !== null) {
 destroy.addEventListener("click", function () {
   window.location.href =
@@ -345,7 +344,7 @@ function fetchLatestUser() {
         showUserText.textContent = "No users found.";
       } else {
         const latestUser = data[0].username;
-        showUserText.textContent = latestUser;
+        spellUsername(latestUser);
       }
     })
     .catch((error) => {
@@ -354,7 +353,22 @@ function fetchLatestUser() {
     });
 }
 
-fetchLatestUser(); // Call the function when the page loads
+function spellUsername(username) {
+  let index = 0;
+
+  let myInterval = setInterval(function () {
+    if (index < username.length) {
+      showUserText.textContent += username[index];
+      index++;
+      showUserText.classList.add("rotate-animation");
+    } else {
+      clearInterval(myInterval);
+      showUserText.classList.remove("rotate-animation");
+    }
+  }, 80);
+}
+
+fetchLatestUser();
 
 
 

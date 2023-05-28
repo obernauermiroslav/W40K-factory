@@ -200,14 +200,21 @@ li {
 }
 
 #showUsertext{
+  font-size: 25px;
   position: absolute;
   left: 88%;
   top: 33%;
-  width: 100px;
+  width: 110px;
   padding: 5px;
   box-sizing: border-box;
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-all;
 }
+
+#showUsertext2{
+  font-size: 20px;
+}
+
+
 
