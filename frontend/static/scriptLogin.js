@@ -36,7 +36,6 @@ function postFirst() {
     });
 }
 
-
 const facebookButton = document.querySelector(".facebook");
 
 facebookButton.addEventListener("click", function() {

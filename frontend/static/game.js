@@ -6,6 +6,8 @@ let lollypops = document.querySelector(".lollypops");
 let buyLollypop = document.querySelector(".buy-lollypops");
 let generation = document.querySelector(".speed");
 let candyRain = document.querySelector(".candy-machine");
+let orcs = document.getElementById("orcshoot");
+let marines = document.getElementById("marineshoot");
 let counter = 0;
 let lolli = 0;
 let speed = 0;
@@ -35,12 +37,16 @@ let myInterval = setInterval(function () {
       if (candies.innerText > 1500) {
         clearInterval(myInterval);
         clearInterval(orcInterval);
+        
         alert(`Wait, let's count them...
         Okay, we have ${candies.innerText} soldiers...
         OMG...that's even more than we were supposed to recruit...
         strange...usually it takes longer...hmmm...wait!...
         you surely were using the third button right?...but still...
         Mission completed!!!`);
+        if (orcs !== null) {
+          orcs.style.visibility = "hidden";
+        }
       }
     }
   }
@@ -62,12 +68,13 @@ let orcInterval = setInterval(function() {
         We are overwhelmed, mission failed!!!
         `);
         alertShown = true;
+        if (marines !== null) {
+          marines.style.visibility = "hidden";
+        }
       }
     }
   }
 }, 1000);
-
-
 
 candyRain.addEventListener("click", function () {
   setInterval(function () {

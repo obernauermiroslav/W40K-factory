@@ -283,7 +283,6 @@ element.addEventListener("dragover", drag_over, false);
 element.addEventListener("drop", drop, false);
 }
 
-
 function changeTextColor() {
   var header = document.getElementById("header");
   var header2 = document.getElementById("header2");
