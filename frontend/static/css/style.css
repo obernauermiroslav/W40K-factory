@@ -53,7 +53,7 @@ li {
   cursor: pointer;
   margin-left: 450px;
   z-index: 2;
-  transition: all 0.2s cubic-bezier(1, 1, 1, 1);
+  transition: all 0.3s cubic-bezier(1, 1, 1, 1);
 }
 
 #logo:hover {

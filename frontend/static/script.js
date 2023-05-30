@@ -258,14 +258,12 @@ function drop(event) {
   event.preventDefault();
 
   function animate() {
-    logo.style.left =
-      parseInt(logo.style.left) + (Math.random() * 20 - 10) + "px";
-    logo.style.top =
-      parseInt(logo.style.top) + (Math.random() * 20 - 10) + "px";
-
+    logo.style.transform = `translate(${Math.random() * 30 - 5}px, ${Math.random() * 30 - 5}px)`;
     requestAnimationFrame(animate);
   }
+  
   requestAnimationFrame(animate);
+  
 
   submit.disabled = false;
   orc.style.visibility = "hidden";
