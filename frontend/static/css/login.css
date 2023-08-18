@@ -1,5 +1,10 @@
 body { 
     background-image: url("../img/loginlogo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
   }
   h2 {
     margin-left: -40px;
@@ -8,16 +13,17 @@ body {
   
   .container {
     position: relative;
-    width: 550px;
-    height: 370px;
-    padding-left: 15px;
-    padding-top: 10px;
-    margin-left: 365px;
-    margin-top: 140px;
+    width: 570px;
+    height: 380px;
+    margin: 200px auto 0;
+    padding: 10px 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+     /* Set background to not repeat */
+}
+
+
   
   form {
     margin-top: 20px;
