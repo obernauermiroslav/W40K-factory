@@ -58,7 +58,7 @@ ul {
 }
 #colorChange{
   position: absolute;
-  left: 89%;
+  margin-left: 1200px;
   top: 33%;
 }
 #firstText{
